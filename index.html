@@ -142,11 +142,26 @@ fetch('https://ipapi.co/json/')
   });
 </script>
 
-<!-- Proof Image Section -->
+<!-- Proof Image Section with Rotating Images -->
 <div style="text-align:center; background: #fff; padding: 20px; border-radius: 0 0 10px 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-  <img src="https://geekshot96.github.io/blue-origin/proof8274.jpg" alt="Telegram Proof" style="max-width:100%; border-radius: 8px; margin-bottom: 20px;">
+  <img id="proofImage" src="https://geekshot96.github.io/blue-origin/proof8274.jpg" alt="Telegram Proof"
+       style="max-width:100%; border-radius: 8px; margin-bottom: 20px;">
   <h3>Join their private communities</h3>
 </div>
+
+<script>
+  const images = [
+    "https://geekshot96.github.io/blue-origin/proof8274.jpg",
+    "https://nostra02.github.io/Wealth-and-Health-/alpha003.jpg"
+  ];
+
+  let currentIndex = 0;
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("proofImage").src = images[currentIndex];
+  }, 3000);
+</script>
 
 <!-- Highlight Section -->
 <div class="highlight-section">
